@@ -5,4 +5,15 @@ from django.http import HttpResponse
 
 
 def home(request):
-    return render(request, 'index.html')
+    persons = [
+        {'name': "Messi", 'team':'Argentina','jersey':'10'},
+        {'name': "Nadim", 'team':'Barcelona','jersey':'8'},
+        {'name': "Rijvi", 'team':'Manchester City','jersey':'30'},
+        {'name': "Shakib", 'team':'Bangladesh','jersey':'72'},
+        {'name': "Afridi", 'team':'Pakistan','jersey':'10'}
+        
+    ]
+    for person in persons:
+        print(person)
+
+    return render(request, 'index.html',context = {'persons': persons})
